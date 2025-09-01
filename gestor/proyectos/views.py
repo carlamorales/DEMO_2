@@ -16,7 +16,7 @@ class ProyectoDetalleView(DetailView):
 class TareaCrearView(CreateView):
     model = Tarea
     fields = ["titulo", "hecho"]
-    template_name = "proyecto/tarea_form.html"
+    template_name = "proyectos/tarea_form.html"
 
     def get_success_url(self):
         return reverse_lazy("proyecto_detalle", kwargs={"pk":self.kwargs["pk"]})

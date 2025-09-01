@@ -91,3 +91,35 @@
 - Interfaz.
 ![Proyectos activos](images/10.png)
 ![Tareas del proyecto](images/11.png)
+![Formulario nueva tarea](images/12.png)
+
+
+## Parte 5 — Protocolos y ciclo de petición/respuesta (HTTP):
+- ¿Qué ocurre al...?
+    - Visitar /proyectos/:
+        - GET 200.
+        - El navegador pide la URL /proyectos/ al servidor Django.
+        - Django busca la vista correspondiente (definida en urls.py y views.py).
+        - La vista consulta los proyectos en la base de datos.
+        - La vista renderiza un template HTML y lo devuelve como respuesta.
+        - Resultado: el usuario ve una lista de proyectos.
+        - En suma, se hace una solicitud GET a /proyectos/ y el servidor responde con un código 200 OK, mostrando la lista de proyectos disponibles.
+    - Abrir el detalle de un proyecto:
+        - GET 200.
+        - El navegador pide la URL específica del proyecto.
+        - Django busca ese proyecto por su ID.
+        - También carga sus tareas asociadas (con una relación ForeignKey en el modelo de Tarea).El servidor devuelve una página HTML con el detalle del proyecto y sus tareas.
+        - En suma, al abrir el detalle de un proyecto se realiza una solicitud GET que devuelve un código 200 OK. Se muestra la información del proyecto junto con sus tareas.
+    - Enviar el formulario de nueva tarea: 
+        - (POST 302 -> redirect -> GET 200).
+        - El usuario llena el formulario y lo envía → esto es una solicitud POST al servidor.
+        - Django recibe los datos del formulario, los valida y crea una nueva Tarea en la base de datos.
+        - Luego de guardar, Django responde con un 302 Redirect, redirigiendo al usuario a otra vista (la lista de tareas).
+        - El navegador sigue esa redirección y hace una nueva solicitud GET a esa URL → 200 OK.
+        - En suma, al enviar el formulario, se realiza una solicitud POST que crea una nueva tarea. El servidor responde con un 302 redirect (común en formularios en Django) que redirige al usuario al detalle del proyecto, donde se hace una solicitud GET con respuesta 200 OK.
+- ¿Qué recurso se crea y dónde se ve reflejado?
+    - Recurso creado: Una nueva tarea (Tarea), instancia del modelo correspondiente.
+- Dónde se ve reflejado:
+    - En la base de datos: se guarda como una nueva fila en la tabla tareas_tarea.
+    - En la interfaz: se ve la nueva tarea listada con las demás.
+    - En suma, se crea un nuevo recurso de tipo Tarea, que se guarda en la base de datos y se muestra en el detalle del proyecto correspondiente, junto con las demás tareas.
