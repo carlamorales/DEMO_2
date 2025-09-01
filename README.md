@@ -53,3 +53,24 @@
     - Procesan lógica (directamente o con ayuda de modelos).
     - Preparan y devuelven una respuesta (por ejemplo, renderizar un template).
     - En suma, aunque Django lo llama "View", la capa de views.py es la que realmente controla el flujo de peticiones — por eso puede parecer confuso.
+
+## Parte 2 - Configuración base:
+
+- Crear y activar entorno virtual.
+- Instalar Django.
+![Creación y activación de entorno virtual; instalación de Django](images/1.png)
+
+- Crear proyecto y aplicación.
+![Creación del proyecto y la aplicación](images/2.png)
+
+- Registrar la aplicación en el proyecto, y otras configuraciones.
+    - En la lista INSTALLED_APPS agregar la app.
+    ![INSTALLED_APPS](images/3.png)
+    - Cambiar LANGUAGE_CODE = 'en-us' por LANGUAGE_CODE = 'es-cl'.
+    - Cambiar TIME_ZONE = 'UTC' por TIME_ZONE = 'America/Santiago'.
+    ![LANGUAGE_CODE & TIME_ZONE](images/4.png)
+    - Generar la carpeta templates; cambiar 'DIRS': [], por 'DIRS': [BASE_DIR / 'templates'].
+    ![DIRS](images/5.png)
+
+- Ejecutar el servidor de desarrollo.
+![Servidor](images/6.png)
