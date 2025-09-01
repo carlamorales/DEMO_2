@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Nueva tarea{% endblock %}
+{% block contenido %}
+<h1>Nueva tarea</h1>
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary">Guardar</button>
+    <a class="btn btn-link" href="javascript:history.back()">Cancelar</a>
+</form>
+{% endblock %}

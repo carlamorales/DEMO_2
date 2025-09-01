@@ -74,3 +74,20 @@
 
 - Ejecutar el servidor de desarrollo.
 ![Servidor](images/6.png)
+
+## Parte 3 - Modelos:
+
+- A partir de los modelos, crear migraciones y aplicarlas a la base de datos.
+![Modelos & migraciones](images/7.png)
+
+- Crear superusuario.
+![Superusuario](images/8.png)
+
+- Registrar modelos y cargar por shell dos proyectos con dos tareas cada uno.
+![Proyectos & Tareas](images/9.png)
+
+## Parte 4 - Rutas + Vistas + Templates:
+
+- Interfaz.
+![Proyectos activos](images/10.png)
+![Tareas del proyecto](images/11.png)
